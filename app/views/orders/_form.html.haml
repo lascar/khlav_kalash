@@ -35,6 +35,9 @@
   .field
     = form.label :email_address
     = form.text_field :email_address
+  .field
+    = form.label :amount_cents
+    = form.number_field :amount_cents
 
   .actions
-    = form.submit "Pay #{@order.price.format}"
+    = form.submit "Pay"

@@ -1,5 +1,8 @@
 {
   "name": "khlav_kalash",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "chromedriver": "76.0.0"
+  }
 }

@@ -6,8 +6,6 @@ one:
   last_name: MyString
   country: MyString
   email_address: MyString
-  number: MyString
-  permalink: MyString
 
 two:
   amount_cents: 1
@@ -15,5 +13,3 @@ two:
   last_name: MyString
   country: MyString
   email_address: MyString
-  number: MyString
-  permalink: MyString
