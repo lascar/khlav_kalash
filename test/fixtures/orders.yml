@@ -5,11 +5,18 @@ one:
   first_name: MyString
   last_name: MyString
   country: MyString
-  email_address: MyString
+  email_address: MyString@example.com
 
 two:
   amount_cents: 1
   first_name: MyString
   last_name: MyString
   country: MyString
-  email_address: MyString
+  email_address: MyString@example.com
+
+bad_email:
+  amount_cents: 1
+  first_name: MyString
+  last_name: MyString
+  country: MyString
+  email_address: MyString@example
