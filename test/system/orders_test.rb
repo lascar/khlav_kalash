@@ -15,13 +15,11 @@ class OrdersTest < ApplicationSystemTestCase
     click_on "New Order"
 
     fill_in "Amount cents", with: @order.amount_cents
-    fill_in "Country", with: @order.country
+    select(ISO3166::Country['es'].name, from: "order_country").select_option
     fill_in "Email address", with: @order.email_address
     fill_in "First name", with: @order.first_name
     fill_in "Last name", with: @order.last_name
-    fill_in "Number", with: @order.number
-    fill_in "Permalink", with: @order.permalink
-    click_on "Create Order"
+    click_on "Pay"
 
     assert_text "Order was successfully created"
     click_on "Back"

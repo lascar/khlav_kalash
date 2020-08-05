@@ -12,13 +12,13 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_order_url, headers: @auth_headers
+    get new_order_url
     assert_response :success
   end
 
   test "should create order" do
     assert_difference('Order.count') do
-      post orders_url, params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name, number: @order.number, permalink: @order.permalink } }, headers: @auth_headers
+      post orders_url, params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name } }
     end
 
     assert_redirected_to order_permalink_url(Order.last.permalink)
@@ -35,7 +35,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order" do
-    patch order_url(@order), params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name, number: @order.number, permalink: @order.permalink } }, headers: @auth_headers
+    patch order_url(@order), params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name } }, headers: @auth_headers
     assert_redirected_to order_url(@order)
   end
 
