@@ -11,4 +11,24 @@ class OrderTest < ActiveSupport::TestCase
     assert_not order.valid?
   end
 
+  test "first name mandatory" do
+    order = orders(:without_first_name)
+    assert_not order.valid?
+  end
+
+  test "country mandatory" do
+    order = orders(:without_country)
+    assert_not order.valid?
+  end
+
+  test "postal code mandatory" do
+    order = orders(:without_postal_code)
+    assert_not order.valid?
+  end
+
+  test "email address mandatory" do
+    order = orders(:without_email_address)
+    assert_not order.valid?
+  end
+
 end

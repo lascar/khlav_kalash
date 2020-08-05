@@ -1,6 +1,11 @@
 class Order < ApplicationRecord
   # https://stackoverflow.com/a/38612200/611226 slighly modify
   validates_format_of  :email_address, :with => /\A[\+A-Z0-9\._%-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}\Z/i
+  validates :first_name, :presence => true
+  validates :country, :presence => true
+  validates :postal_code, :presence => true
+  validates :email_address, :presence => true
+
   before_create :set_defaults
 
   UNIT_PRICE_CENTS = 299

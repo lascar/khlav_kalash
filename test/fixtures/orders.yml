@@ -6,6 +6,7 @@ one:
   last_name: MyString
   country: MyString
   email_address: MyString@example.com
+  postal_code: 18680
 
 two:
   amount_cents: 1
@@ -13,6 +14,7 @@ two:
   last_name: MyString
   country: MyString
   email_address: MyString@example.com
+  postal_code: 18680
 
 bad_email:
   amount_cents: 1
@@ -20,3 +22,32 @@ bad_email:
   last_name: MyString
   country: MyString
   email_address: MyString@example
+  postal_code: 18680
+
+without_first_name:
+  amount_cents: 1
+  last_name: MyString
+  country: MyString
+  email_address: MyString@example.com
+  postal_code: 18680
+
+without_country:
+  first_name: MyString
+  amount_cents: 1
+  last_name: MyString
+  email_address: MyString@example.com
+  postal_code: 18680
+
+without_postal_code:
+  first_name: MyString
+  last_name: MyString
+  country: MyString
+  amount_cents: 1
+  email_address: MyString@example.com
+
+without_email_address:
+  first_name: MyString
+  last_name: MyString
+  country: MyString
+  amount_cents: 1
+  postal_code: 18680
