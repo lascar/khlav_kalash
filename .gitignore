@@ -33,3 +33,5 @@ config/master.key
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+db/test.sqlite3
+db/development.sqlite3
