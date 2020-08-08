@@ -33,7 +33,7 @@ Start the puma server with
 rails s
 ```
 
-## Stipe credentials
+## Stripe credentials
 You need to put in config/credentials.yml.enc the stripe's keys
 ```
 rails credentials:edit
