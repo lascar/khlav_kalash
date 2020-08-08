@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.integer :amount_cents
+      t.integer :quantity
       t.string :first_name
       t.string :last_name
       t.string :street_line_1

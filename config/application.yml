@@ -1,0 +1,6 @@
+development:
+  UNIT_PRICE_CENTS: '299'
+  CURRENCY: EUR
+test:
+  UNIT_PRICE_CENTS: '299'
+  CURRENCY: EUR

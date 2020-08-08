@@ -31,4 +31,9 @@ class OrderTest < ActiveSupport::TestCase
     assert_not order.valid?
   end
 
+  test "quantity mandatory" do
+    order = orders(:without_quantity)
+    assert_not order.valid?
+  end
+
 end

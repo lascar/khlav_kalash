@@ -18,10 +18,10 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order" do
     assert_difference('Order.count') do
-      post orders_url, params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name, postal_code: @order.postal_code } }
+      post orders_url, params: { order: { quantity: @order.quantity, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name, postal_code: @order.postal_code } }
     end
 
-    assert_redirected_to order_permalink_url(Order.last.permalink)
+    assert_template :create
   end
 
   test "should show order" do
@@ -35,7 +35,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order" do
-    patch order_url(@order), params: { order: { amount_cents: @order.amount_cents, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name } }, headers: @auth_headers
+    patch order_url(@order), params: { order: { quantity: @order.quantity, country: @order.country, email_address: @order.email_address, first_name: @order.first_name, last_name: @order.last_name } }, headers: @auth_headers
     assert_redirected_to order_url(@order)
   end
 

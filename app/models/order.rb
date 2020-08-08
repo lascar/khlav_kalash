@@ -5,11 +5,12 @@ class Order < ApplicationRecord
   validates :country, :presence => true
   validates :postal_code, :presence => true
   validates :email_address, :presence => true
+  validates :quantity, :presence => true
 
   before_create :set_defaults
 
-  UNIT_PRICE_CENTS = 299
-  CURRENCY = 'USD'.freeze
+  UNIT_PRICE_CENTS = ENV['UNIT_PRICE_CENTS']
+  CURRENCY = ENV['CURRENCY']
 
   def price
     Money.new(UNIT_PRICE_CENTS, CURRENCY)

@@ -1,7 +1,10 @@
 %p#notice= notice
 %p
-  %strong Amount cents:
-  = @order.amount_cents
+  %strong Quantity:
+  = @order.quantity
+%p
+  %strong Final Price
+  = Money.new(@order.quantity * ENV["UNIT_PRICE_CENTS"].to_i, ENV["CURRENCY"]).format
 %p
   %strong First name:
   = @order.first_name

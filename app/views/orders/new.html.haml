@@ -1,5 +1,7 @@
+%p#notice= notice
+
 %h1 New Order
 
-%img(src="/product.jpg" style="width:30%")
+= image_tag("product.jpg", {style: "width:30%"})
 
-= render 'form', order: @order, boton_submit: "Pay"
+= render 'form', order: @order, boton_submit: "Create Order"

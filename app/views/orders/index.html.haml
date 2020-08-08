@@ -3,7 +3,7 @@
 %table
   %thead
     %tr
-      %th Amount cents
+      %th Quantity
       %th First name
       %th Last name
       %th Country
@@ -14,7 +14,7 @@
   %tbody
     - @orders.each do |order|
       %tr
-        %td= order.amount_cents
+        %td= order.quantity
         %td= order.first_name
         %td= order.last_name
         %td= order.country

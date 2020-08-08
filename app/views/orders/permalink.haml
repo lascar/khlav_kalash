@@ -1,10 +1,11 @@
 %p#notice= notice
 %p
-  %strong Number:
-  = @order.number
+  %strong Quantity:
+  = @order.quantity
 %p
   %strong Amount paid:
-  = Money.new(@order.amount_cents, Order::CURRENCY).format
+  %span#amount_paid
+    = Money.new(@order.quantity * ENV["UNIT_PRICE_CENTS"].to_i, ENV["CURRENCY"]).format
 %p
   %strong First name:
   = @order.first_name
@@ -33,5 +34,5 @@
   %strong Email address:
   = @order.email_address
 
-= link_to 'Back', orders_path
+= link_to 'New', new_order_path
 

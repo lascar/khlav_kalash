@@ -32,3 +32,18 @@ Start the puma server with
 ```
 rails s
 ```
+
+## Stipe credentials
+You need to put in config/credentials.yml.enc the stripe's keys
+```
+rails credentials:edit
+```
+development:
+  STRIPE_PUBLISHABLE_KEY: pk_test_51HDnIeANCgph6iNjAae6GaUPt6l7OtYzV0HTxnniRScYQwR3nnmk7D4dk7Fbex6eQoePe9oeeu
+  STRIPE_SECRET_KEY: sk_test_51HDnIeANCgph6iNjp7Iu4sGxNeQvJocYipiQD0PI99o7dpDyc7pvlhTDsHaQwNoq0HgYohnePI8eoatoeuh9aoeuEOAu
+test:
+  STRIPE_PUBLISHABLE_KEY: pk_test_51HDnIeANCgph6iNjAae6GaUPt6l7OtYzV0HTxnniRScYQwR3nnmk7D4dk7Fbex6eQoePe9oeeu
+  STRIPE_SECRET_KEY: sk_test_51HDnIeANCgph6iNjp7Iu4sGxNeQvJocYipiQD0PI99o7dpDyc7pvlhTDsHaQwNoq0HgYohnePI8eoatoeuh9aoeuEOAu
+
+# Variables
+Variables as CURRENCY or UNIT_PRICE_CENTS are read from config/application.yml

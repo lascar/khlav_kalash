@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/checkout/sessions
+    body:
+      encoding: UTF-8
+      string: payment_method_types[0]=card&line_items[0][price_data][currency]=eur&line_items[0][price_data][product_data][name]=khlav_kalash&line_items[0][price_data][unit_amount]=299&line_items[0][quantity]=2&mode=payment&success_url=http%3A%2F%2F127.0.0.1%3A45317%2Forder%2Fconfirm%3Fpermalink%3D8dac1c77bc75dfe021a9d3f18131c4dbf930b0f2%26secret%3D72RG6Bifb8hbejmGp%252F96r%252F9HdSp%252BPz9b3cdUk0qknjWETj4khyY6d0FLCUfyvaDUl3iR%252B3CvGpLY2sToUc61--gYD4fHDokb324VSq--MtDP8DDyKssx2KEk%252F%252BaF3A%253D%253D&cancel_url=http%3A%2F%2F127.0.0.1%3A45317%2Forder%2Fcancel%3Fpermalink%3D8dac1c77bc75dfe021a9d3f18131c4dbf930b0f2
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/5.23.1
+      Authorization:
+      - Bearer sk_test_ZpZjmwqiuVnh7gGaBtXqrVIj
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"5.23.1","lang":"ruby","lang_version":"2.5.3 p105 (2018-10-18)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 4.19.0-10-amd64 (debian-kernel@lists.debian.org) (gcc version 8.3.0
+        (Debian 8.3.0-6)) #1 SMP Debian 4.19.132-1 (2020-07-24)","hostname":"debian"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 07 Aug 2020 14:32:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1078'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_P9ho3ioYYcft0y
+      Stripe-Version:
+      - '2018-11-08'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "cs_test_CA9u2m5rLlqRPnr75iXEzDT0gKedxBM1qs28KthXFgme2wsL2EoHf14M",
+          "object": "checkout.session",
+          "allow_promotion_codes": null,
+          "amount_subtotal": 598,
+          "amount_total": 598,
+          "billing_address_collection": null,
+          "cancel_url": "http://127.0.0.1:45317/order/cancel?permalink=8dac1c77bc75dfe021a9d3f18131c4dbf930b0f2",
+          "client_reference_id": null,
+          "currency": "eur",
+          "customer": null,
+          "customer_email": null,
+          "livemode": false,
+          "locale": null,
+          "metadata": {
+          },
+          "mode": "payment",
+          "payment_intent": "pi_1HDWctCcvwYnn9lU2MPYwhX9",
+          "payment_method_types": [
+            "card"
+          ],
+          "setup_intent": null,
+          "shipping": null,
+          "shipping_address_collection": null,
+          "submit_type": null,
+          "subscription": null,
+          "success_url": "http://127.0.0.1:45317/order/confirm?permalink=8dac1c77bc75dfe021a9d3f18131c4dbf930b0f2\u0026secret=72RG6Bifb8hbejmGp%2F96r%2F9HdSp%2BPz9b3cdUk0qknjWETj4khyY6d0FLCUfyvaDUl3iR%2B3CvGpLY2sToUc61--gYD4fHDokb324VSq--MtDP8DDyKssx2KEk%2F%2BaF3A%3D%3D",
+          "total_details": {
+            "amount_discount": 0,
+            "amount_tax": 0
+          }
+        }
+  recorded_at: Fri, 07 Aug 2020 14:32:55 GMT
+recorded_with: VCR 6.0.0

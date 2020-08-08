@@ -1,0 +1,23 @@
+<button id="checkout-button" data-secret="<%= @session.id %>">
+  Confirm Order
+</button>
+<br>
+
+<%= button_to 'Cancel Order', order_cancel_path, method: :get,
+  params: {permalink: @order.permalink} %>
+
+<script>
+  var stripe_publishable_key =
+   "<%= Rails.application.credentials[Rails.env.to_sym][:STRIPE_PUBLISHABLE_KEY] %>";
+    var stripe = Stripe(stripe_publishable_key);
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function() {
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session.id %>"
+      }).then(function (result) {
+        var notification = document.getElementById("notice");
+        notification.innerHTML = result.error.message;
+      });
+    });
+</script>
